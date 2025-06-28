@@ -1,133 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
-<cabeza>
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="ancho=ancho-del-dispositivo, escala-inicial=1.0, ajuste-viewport=cubierta" />
-  Radio Tepeyac TV
-  <link rel="manifiesto" href="manifiesto.json">
-  <link rel="hoja de estilo" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="hoja de estilo">
-  <meta name="color del tema" contenido="#4da6ff"/>
-  <estilo>
-    cuerpo {
-      margen: 0;
-      familia de fuentes: 'Montserrat', sans-serif;
-      fondo: url('fondo.mp4') no-repetir centro centro fijo;
-      tamaño de fondo: portada;
-      color: blanco;
-      pantalla: flex;
-      flexión-dirección: columna;
-      alinear-elementos: centro;
-      justificar-contenido: inicio-flexible;
-      altura mínima: 100vh;
-      relleno: 1rem;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Radio Tepeyac TV</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#4da6ff"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('fondo.mp4') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 1rem;
     }
     h1 {
-      tamaño de fuente: 1.8rem;
-      margen: 0.5rem 0;
-      alinear texto: centro;
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+      text-align: center;
     }
-    .eslogan {
-      tamaño de fuente: 1.2rem;
+    .tagline {
+      font-size: 1.2rem;
       color: #4da6ff;
-      alinear texto: centro;
-      margen inferior: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
     .circle-player {
-      ancho: 220px;
-      altura: 220px;
-      pantalla: flex;
-      alinear-elementos: centro;
-      justificar-contenido: centro;
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .anillo luminoso {
-      ancho: 100%;
-      altura: 100%;
-      radio del borde: 50%;
-      borde: 5px sólido #4da6ff;
-      pantalla: flex;
-      alinear-elementos: centro;
-      justificar-contenido: centro;
-      animación: resplandor 2s infinita facilidad de entrada y salida;
-      relleno: 10px;
-      tamaño de caja: caja de borde;
+    .glow-ring {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid #4da6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: glow 2s infinite ease-in-out;
+      padding: 10px;
+      box-sizing: border-box;
     }
-    .anillo luminoso img {
-      ancho: 100%;
-      altura: 100%;
-      objeto-ajuste: cubierta;
-      radio del borde: 50%;
+    .glow-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
-    @keyframes resplandor {
-      0%, 100% { sombra de caja: 0 0 15px #4da6ff; }
-      50% { sombra de caja: 0 0 30px #4da6ff; }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 15px #4da6ff; }
+      50% { box-shadow: 0 0 30px #4da6ff; }
     }
-    .reproduciendo ahora {
-      tamaño de fuente: 1rem;
-      alinear texto: centro;
-      margen: 1rem 0;
+    .now-playing {
+      font-size: 1rem;
+      text-align: center;
+      margin: 1rem 0;
     }
-    .controles {
-      pantalla: flex;
-      alinear-elementos: centro;
-      brecha: 1,5rem;
-      flex-wrap: envolver;
-      justificar-contenido: centro;
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .controla i {
-      tamaño de fuente: 2rem;
-      cursor: puntero;
+    .controls i {
+      font-size: 2rem;
+      cursor: pointer;
     }
-    .volumen {
-      ancho: 120px;
+    .volume {
+      width: 120px;
     }
     .live-label {
-      tamaño de fuente: 0.9rem;
+      font-size: 0.9rem;
       color: #ccc;
-      alinear texto: centro;
+      text-align: center;
     }
-    .iconos sociales {
-      margen superior: 2rem;
-      pantalla: flex;
-      justificar-contenido: centro;
-      brecha: 1,5rem;
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
-    .iconos sociales a {
-      color: blanco;
-      tamaño de fuente: 2rem;
+    .social-icons a {
+      color: white;
+      font-size: 2rem;
     }
-    .pie de página {
-      margen superior: 2rem;
-      tamaño de fuente: 0.9rem;
-      alinear texto: centro;
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      text-align: center;
     }
-    audio { pantalla: ninguno; }
-  </estilo>
-</cabeza>
-<cuerpo>
+    audio { display: none; }
+  </style>
+</head>
+<body>
   <img src="banner.jpg" alt="Banner Radio Tepeyac" class="banner" style="max-width: 90%;">
   <h1>1500 vatios de luz para tu alma</h1>
   <div class="tagline">Fe, Vida y Cultura</div>
 
   <div class="circle-player">
-    <div class="anillo brillante" tabindex="0" onclick="alternarReproducción()">
-      <img src="logo.png" alt="Logotipo Radio Tepeyac" />
+    <div class="glow-ring" tabindex="0" onclick="togglePlay()">
+      <img src="logo.png" alt="Logo Radio Tepeyac" />
     </div>
   </div>
 
   <div class="now-playing" id="nowPlaying">Cargando canción...</div>
 
-  <div class="controles">
+  <div class="controls">
     <i class="fas fa-play" onclick="togglePlay()" title="Reproducir"></i>
     <i class="fas fa-stop" onclick="stopAudio()" title="Detener"></i>
-    <tipo de entrada="rango" mín="0" máx="1" paso="0.1" valor="1" clase="volumen" al cambiar="establecerVolumen(este.valor)">
-    <div onclick="ventana.abrir('https://facebook.com/profile.php?id=100007031445504&v=live')">
+    <input type="range" min="0" max="1" step="0.1" value="1" class="volume" onchange="setVolume(this.value)">
+    <div onclick="window.open('https://facebook.com/profile.php?id=100007031445504&v=live')">
       <i class="fab fa-facebook-square"></i>
       <div class="live-label">Transmisión en vivo</div>
     </div>
   </div>
 
-  <div class="iconos-sociales">
+  <div class="social-icons">
     <a href="https://facebook.com/profile.php?id=100007031445504" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://wa.me/529811016637" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://miparroquiadijital.space" target="_blank"><i class="fas fa-globe"></i></a>
@@ -137,35 +137,42 @@
 
   <div class="footer">© 2025 Radio Tepeyac · Todos los derechos reservados</div>
 
-  <guión>
+  <script>
     const audio = document.getElementById("audio");
-    const ahoraReproduciendo = document.getElementById("ahoraReproduciendo");
+    const nowPlaying = document.getElementById("nowPlaying");
 
-    función togglePlay() {
-      si (audio.pausado) {
+    function togglePlay() {
+      if (audio.paused) {
         audio.play().catch(e => console.log(e));
-      } demás {
-        audio.pausa();
+      } else {
+        audio.pause();
       }
     }
-    función stopAudio() {
-      audio.pausa();
+    function stopAudio() {
+      audio.pause();
       audio.currentTime = 0;
     }
-    función setVolume(val) {
-      audio.volumen = val;
+    function setVolume(val) {
+      audio.volume = val;
     }
-    función updateNowPlaying() {
-      const ahora = nueva Fecha();
-      const time = now.toLocaleTimeString([], { hora: '2 dígitos', minuto: '2 dígitos' });
+    function updateNowPlaying() {
+      const now = new Date();
+      const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       nowPlaying.textContent = `🎵 Radio Tepeyac | 🕒 ${time}`;
     }
-    setInterval(actualizarAhoraReproduciendo, 10000);
-    actualizarAhoraReproduciendo();
+    setInterval(updateNowPlaying, 10000);
+    updateNowPlaying();
 
-    if ('serviceWorker' en el navegador) {
+    if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
+
+    // 👇 ACTIVAR MODO SEGUNDO PLANO
+    document.addEventListener('deviceready', function () {
+      if (cordova && cordova.plugins && cordova.plugins.backgroundMode) {
+        cordova.plugins.backgroundMode.enable();
+      }
+    }, false);
   </script>
-</cuerpo>
+</body>
 </html>
