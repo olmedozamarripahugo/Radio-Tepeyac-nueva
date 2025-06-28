@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<cabeza>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="ancho=ancho-del-dispositivo, escala-inicial=1.0, ajuste-viewport=cubierta" />
+  Radio Tepeyac TV
+  <link rel="manifiesto" href="manifiesto.json">
+  <link rel="hoja de estilo" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="hoja de estilo">
+  <meta name="color del tema" contenido="#4da6ff"/>
+  <estilo>
+    cuerpo {
+      margen: 0;
+      familia de fuentes: 'Montserrat', sans-serif;
+      fondo: url('fondo.jpg') no-repetir centro centro fijo;
+      tamaño de fondo: portada;
+      color: blanco;
+      pantalla: flex;
+      flexión-dirección: columna;
+      alinear-elementos: centro;
+      justificar-contenido: inicio-flexible;
+      altura mínima: 100vh;
+      relleno: 1rem;
+    }
+    h1 {
+      tamaño de fuente: 1.8rem;
+      margen: 0.5rem 0;
+      alinear texto: centro;
+    }
+    .eslogan {
+      tamaño de fuente: 1.2rem;
+      color: #4da6ff;
+      alinear texto: centro;
+      margen inferior: 2rem;
+    }
+    .circle-player {
+      ancho: 220px;
+      altura: 220px;
+      pantalla: flex;
+      alinear-elementos: centro;
+      justificar-contenido: centro;
+    }
+    .anillo luminoso {
+      ancho: 100%;
+      altura: 100%;
+      radio del borde: 50%;
+      borde: 5px sólido #4da6ff;
+      pantalla: flex;
+      alinear-elementos: centro;
+      justificar-contenido: centro;
+      animación: resplandor 2s infinita facilidad de entrada y salida;
+      relleno: 10px;
+      tamaño de caja: caja de borde;
+    }
+    .anillo luminoso img {
+      ancho: 100%;
+      altura: 100%;
+      objeto-ajuste: cubierta;
+      radio del borde: 50%;
+    }
+    @keyframes resplandor {
+      0%, 100% { sombra de caja: 0 0 15px #4da6ff; }
+      50% { sombra de caja: 0 0 30px #4da6ff; }
+    }
+    .reproduciendo ahora {
+      tamaño de fuente: 1rem;
+      alinear texto: centro;
+      margen: 1rem 0;
+    }
+    .controles {
+      pantalla: flex;
+      alinear-elementos: centro;
+      brecha: 1,5rem;
+      flex-wrap: envolver;
+      justificar-contenido: centro;
+    }
+    .controla i {
+      tamaño de fuente: 2rem;
+      cursor: puntero;
+    }
+    .volumen {
+      ancho: 120px;
+    }
+    .live-label {
+      tamaño de fuente: 0.9rem;
+      color: #ccc;
+      alinear texto: centro;
+    }
+    .iconos sociales {
+      margen superior: 2rem;
+      pantalla: flex;
+      justificar-contenido: centro;
+      brecha: 1,5rem;
+    }
+    .iconos sociales a {
+      color: blanco;
+      tamaño de fuente: 2rem;
+    }
+    .pie de página {
+      margen superior: 2rem;
+      tamaño de fuente: 0.9rem;
+      alinear texto: centro;
+    }
+    audio { pantalla: ninguno; }
+  </estilo>
+</cabeza>
+<cuerpo>
+  <img src="banner.jpg" alt="Banner Radio Tepeyac" class="banner" style="max-width: 90%;">
+  <h1>1500 vatios de luz para tu alma</h1>
+  <div class="tagline">Fe, Vida y Cultura</div>
+
+  <div class="circle-player">
+    <div class="anillo brillante" tabindex="0" onclick="alternarReproducción()">
+      <img src="logo.png" alt="Logotipo Radio Tepeyac" />
+    </div>
+  </div>
+
+  <div class="now-playing" id="nowPlaying">Cargando canción...</div>
+
+  <div class="controles">
+    <i class="fas fa-play" onclick="togglePlay()" title="Reproducir"></i>
+    <i class="fas fa-stop" onclick="stopAudio()" title="Detener"></i>
+    <tipo de entrada="rango" mín="0" máx="1" paso="0.1" valor="1" clase="volumen" al cambiar="establecerVolumen(este.valor)">
+    <div onclick="ventana.abrir('https://facebook.com/profile.php?id=100007031445504&v=live')">
+      <i class="fab fa-facebook-square"></i>
+      <div class="live-label">Transmisión en vivo</div>
+    </div>
+  </div>
+
+  <div class="iconos-sociales">
+    <a href="https://facebook.com/profile.php?id=100007031445504" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/529811016637" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://miparroquiadijital.space" target="_blank"><i class="fas fa-globe"></i></a>
+  </div>
+
+  <audio id="audio" src="https://c19.radioboss.fm:8169/stream" preload="auto"></audio>
+
+  <div class="footer">© 2025 Radio Tepeyac · Todos los derechos reservados</div>
+
+  <guión>
+    const audio = document.getElementById("audio");
+    const ahoraReproduciendo = document.getElementById("ahoraReproduciendo");
+
+    función togglePlay() {
+      si (audio.pausado) {
+        audio.play().catch(e => console.log(e));
+      } demás {
+        audio.pausa();
+      }
+    }
+    función stopAudio() {
+      audio.pausa();
+      audio.currentTime = 0;
+    }
+    función setVolume(val) {
+      audio.volumen = val;
+    }
+    función updateNowPlaying() {
+      const ahora = nueva Fecha();
+      const time = now.toLocaleTimeString([], { hora: '2 dígitos', minuto: '2 dígitos' });
+      nowPlaying.textContent = `🎵 Radio Tepeyac | 🕒 ${time}`;
+    }
+    setInterval(actualizarAhoraReproduciendo, 10000);
+    actualizarAhoraReproduciendo();
+
+    if ('serviceWorker' en el navegador) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</cuerpo>
+</html>
